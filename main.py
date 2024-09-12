@@ -22,6 +22,8 @@ async def root(request: Request):
 
 
 @app.post("/new")
-async def new_post(request: Request):
+async def new_post(title: Annotated[str, Form()], body: Annotated[str, Form()]):
     with Session(engine) as sess:
-        new_post = Posts(title=request.form)
+        new_post = Posts(title=title, body=body)
+        sess.add(new_post)
+        sess.commit()
