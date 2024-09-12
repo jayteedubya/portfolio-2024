@@ -13,7 +13,7 @@ class Base(DeclarativeBase):
 
 
 class Posts(Base):
-    __tablename__ = "user_account"
+    __tablename__ = "posts"
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str]
     post_content: Mapped[Optional[str]]
