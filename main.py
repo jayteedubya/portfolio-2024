@@ -5,9 +5,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from models import Posts
-from engine import engine
-from sqlalchemy.orm import Session
 
 app = FastAPI()
 
@@ -23,7 +20,4 @@ async def root(request: Request):
 
 @app.post("/new")
 async def new_post(title: Annotated[str, Form()], body: Annotated[str, Form()]):
-    with Session(engine) as sess:
-        new_post = Posts(title=title, body=body)
-        sess.add(new_post)
-        sess.commit()
+    pass
