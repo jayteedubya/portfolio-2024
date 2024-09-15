@@ -1,4 +1,9 @@
-from engine import engine
-from models import Base
+from dotenv import load_dotenv
+load_dotenv()
 
-Base.metadata.create_all(engine)
+from db_engine import engine
+from posts import Post
+
+from sqlmodel import SQLModel
+
+SQLModel.metadata.create_all(engine)
