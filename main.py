@@ -5,7 +5,9 @@ from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from sqlmodel import create_engine
 
+engine = create_engine(getenv("DB_CONN_STRING"))
 
 app = FastAPI()
 
