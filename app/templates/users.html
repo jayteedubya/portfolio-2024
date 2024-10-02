@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+    <ul>
+    {% for user in users %}
+    <li>
+        <div>
+            <p> {{ user }}</p>
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+</body>
+
+</html>
