@@ -10,9 +10,9 @@ from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
-import routes.posts.posts as posts
-import routes.users.users as users
-import routes.auth.auth as auth
+import app.routes.posts.posts as posts
+import app.routes.users.users as users
+import app.routes.auth.auth as auth
 
 
 
@@ -22,7 +22,7 @@ app.include_router(posts.router)
 app.include_router(users.router)
 app.include_router(auth.router)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 
 @app.get("/", response_class=HTMLResponse)

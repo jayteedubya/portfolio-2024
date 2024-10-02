@@ -1,9 +1,9 @@
 from typing import Optional, Annotated
 from datetime import datetime
 
-from templates import templates
-from db_engine import engine
-from routes.auth.auth import oauth2_scheme
+from app.templates import templates
+from app.db_engine import engine
+from app.routes.auth.auth import oauth2_scheme
 
 from fastapi import APIRouter, Request, Form, Depends
 from fastapi.responses import HTMLResponse, JSONResponse

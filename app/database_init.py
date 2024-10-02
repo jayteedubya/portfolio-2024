@@ -3,7 +3,7 @@ load_dotenv()
 
 from db_engine import engine
 from routes.posts.posts import Post
-from routes.users.users import User
+from app.routes.users.users import User
 
 from sqlmodel import SQLModel
 

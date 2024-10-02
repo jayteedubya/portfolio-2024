@@ -1,8 +1,8 @@
 from typing import Annotated
 
-from templates import templates
-from db_engine import engine
-from routes.auth.auth import pw_context
+from app.templates import templates
+from app.db_engine import engine
+from app.routes.auth.context import pw_context
 
 from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse, JSONResponse

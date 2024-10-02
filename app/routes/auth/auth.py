@@ -1,11 +1,11 @@
 from os import getenv
 from typing import Annotated
 
-from ...templates import templates
-from ...db_engine import engine
-from users import User
-from context import oauth2_scheme, pw_context
-from models import Token, TokenData, SignInForm
+from app.templates import templates
+from app.db_engine import engine
+from app.routes.users.users import User
+from app.routes.auth.context import oauth2_scheme, pw_context
+from app.routes.auth.models import Token, TokenData, SignInForm
 
 from fastapi import APIRouter, Request, Form, HTTPException, Depends, status
 from fastapi.responses import HTMLResponse, JSONResponse
